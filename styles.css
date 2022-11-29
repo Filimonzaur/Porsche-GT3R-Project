@@ -1,0 +1,226 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Exo 2', sans-serif;
+  font-size: 16px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+/* LOADING IMAGE */
+.loading{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading-logo{
+  width: 20%;
+  display: block;
+  opacity: 0;
+  animation: 2s .2s forwards logo-come-in;
+}
+@keyframes logo-come-in{
+  0%{transform: translateY(5em); opacity: 0;}
+  50%{ transform: translateY(0); opacity: 1;}
+  100%{transform: translateY(-5em); opacity: 0;}
+}
+/* BACKGROUND */
+.background{
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  animation: .5s 2s forwards background-in;
+  opacity: 0;
+}
+@keyframes background-in{
+  from{transform: translateY(-100vh); opacity: 1;}
+  to{transform: translateY(0);opacity: 1;}
+}
+.background-image{
+  height: 103vh;
+  margin-left: -.2em;
+}
+.background-logo{
+  width: 10%;
+  position: absolute; 
+  left: 0; 
+  right: 0;
+  top: 0;
+  margin: 1em auto 0;
+  opacity: 0;
+  animation: .5s 2s forwards background-in;
+}
+/* HERO */
+.slider{
+  text-align: center;
+  height: 50vh;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  background-color: white;
+  animation: .9s 2.3s forwards content-in;
+  opacity: 0;
+}
+@keyframes content-in{
+  from{transform: translateY(100vh);opacity: 1;}
+  to{transform: translate(0);opacity: 1;}
+}
+.slider-content{
+  margin-top: -15em;
+}
+.porsche-photo{
+  width: 40%;
+  z-index: 5;
+  animation: .9s 2.5s forwards porsche-in;
+  opacity: 0;
+}
+@keyframes porsche-in{
+  from{transform: translateY(100vh);opacity: 0;}
+  to{transform: translate(0);opacity: 1;}
+}
+.title{
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: .2rem;
+  background: -webkit-linear-gradient(#f76571, #760b12);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  animation: .9s 2.8s forwards porsche-in;
+}
+.btn{
+  border: 2px solid black;
+  width: 20%;
+  margin: 0 auto;
+  padding: .8em 1.6em;
+  transition: color .3s ease;
+  opacity: 0;
+  animation: .9s 2.8s forwards porsche-in;
+  cursor: pointer;
+}
+.btn:hover,.btn:active{
+  border: 2px solid #D5001C;
+  color: #D5001C;
+}
+/* TECHNICAL SECTION */
+.technical{
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  position: absolute;
+  animation: 1s ease-in-out technicalIn;
+  overflow: scroll;
+}
+@keyframes technicalIn{
+  from{transform: translateY(100vh);}
+  to{transform: translateY(0);}
+}
+.close{
+  width: 1.5%;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  cursor: pointer;
+}
+.content{
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 5em auto 0;
+}
+.technical-video{
+  width: 60%;
+  margin-bottom: 2em;
+}
+.text{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+.technical-image{
+  width: 70%;
+  margin: 2em 0 1em;
+}
+.highlights{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2em;
+}
+table{
+  margin: 1em auto 2em;
+}
+tr{
+  display: flex;
+  justify-content: space-between;
+}
+hr{
+  margin-top: 1em;
+}
+@media only screen and (max-width: 850px) {
+  .background-image{
+    margin-left: -32em;
+  }
+  .loading-logo{
+    width: 50%;
+  }
+  .background-logo{
+    width: 30%;
+  }
+  .porsche-photo{
+    margin-top: 1em;
+    width: 70%;
+  }
+  .btn{
+    margin-top: 2em;
+    width: 50%;
+  }
+  .close{
+    width: 5%;
+  }
+}
+@media only screen and (max-width: 550px){
+  .title{
+    font-size: 2rem;
+  }
+  .btn{
+    width: 80%;
+  }
+  .porsche-photo{
+    margin: 1em 0 4em;
+    width: 80%;
+  }
+  .loading-logo{
+    margin-top: -5em;
+  }
+  .slider-content{
+    margin-top: -10em;
+  }
+  .technical-video{
+    width: 100%;
+  }
+  .technical-image{
+    width: 90%;
+  }
+  .text{
+    width: 95%;
+  }
+  .content{
+    margin: 3em auto 0;
+  }
+  table{
+    font-size: .8rem;
+    margin-bottom: 7em;
+  }
+}
